@@ -15,6 +15,11 @@ axios
     // tell typescript response.data is a Todo
     const todo = response.data as Todo;
     const { id, title, completed } = todo;
-    console.log(`ID ${id}, title: ${title}, completed: ${completed}`);
+
+    logTodo(id, title, completed);
   })
   .catch((error) => console.log(error));
+
+const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`ID ${id}, title: ${title}, completed: ${completed}`);
+};
